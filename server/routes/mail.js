@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 var request = require('request');
-var domain = MAILGUN_DOMAIN || 'sandboxdb893f19ba9346f68004491a7dd09e59.mailgun.org';
-var key = MAILGUN_API_KEY || 'key-e8598fe5ada73e92e6f692b19e43f14f';
+var domain = process.env.MAILGUN_DOMAIN || 'sandboxdb893f19ba9346f68004491a7dd09e59.mailgun.org';
+var key = process.env.MAILGUN_API_KEY || 'key-e8598fe5ada73e92e6f692b19e43f14f';
 var mailgun = require('mailgun-js')({apiKey: key , domain: domain});
 
 //sends an email
@@ -16,8 +16,8 @@ router.post('/', function(req, res, next) {
   var transporter = nodemailer.createTransport({
       service: 'Mailgun',
       auth: {
-          user: MAILGUN_SMTP_LOGIN ||  'postmaster@sandboxdb893f19ba9346f68004491a7dd09e59.mailgun.org',
-          pass: MAILGUN_SMTP_PASSWORD || 'cb28882b6b95bc142d8d415e2096204b',
+          user: process.env.MAILGUN_SMTP_LOGIN ||  'postmaster@sandboxdb893f19ba9346f68004491a7dd09e59.mailgun.org',
+          pass: process.env.MAILGUN_SMTP_PASSWORD || 'cb28882b6b95bc142d8d415e2096204b',
 
       }
   });
