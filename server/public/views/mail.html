@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 id="welcome" class="lead">Welcome, {{userName}}!</h1>
+    <button class="btn btn-default" ng-click="logout()">Log Out</button>
+
+
+<form>
+
+
+  <label class="control-label" for="inputEmail">Email</label>
+    <input type="email" id="inputEmail" placeholder="Email" ng-model="email.sendTo" required>
+    <label for="Message"></label>
+<textarea class="textarea" placeholder="Message" ng-model="email.message" ></textarea>
+
+<input type="submit" ng-click="submitEmail()" />
+
+</form>
+
+<button ng-click="getEmail()">get email</button>
+</div>
