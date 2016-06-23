@@ -19,6 +19,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/mail.html',
       controller: "MailController"
     })
+    .when('/messages', {
+      templateUrl: '/views/messages.html',
+      controller: "MessagesController"
+    })
     .otherwise({
       redirectTo: 'home'
     })
