@@ -23,7 +23,7 @@ router.post('/', function(req, res, next) {
 
     app.post('/webhooks/mailgun/catchall', function (req, res) {
       // actually handle request here
-      console.log(req);
+      console.log(req.body);
     });
   });
 
