@@ -45,7 +45,7 @@ transporter.sendMail(mailOptions, function(error, info){
 router.get('/messages', function (req, res) {
   console.log("get mail");
 
-  mailgun.get('/' + domain + '/log', //{ event: ['sent', 'delivered'] },
+  mailgun.get('/' + domain + '/messages', //{ event: ['sent', 'delivered'] },
 
   function (error, body) {
     console.log(error);
