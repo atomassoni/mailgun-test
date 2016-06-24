@@ -50,6 +50,7 @@ router.get('/messages', function (req, res) {
   function (error, body) {
     console.log(error);
     console.log(body);
+    res.send(body);
   });
 });
 
