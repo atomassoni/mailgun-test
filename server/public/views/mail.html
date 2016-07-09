@@ -8,6 +8,8 @@
 
   <label class="control-label" for="inputEmail">Email</label>
     <input type="email" id="inputEmail" placeholder="Email" ng-model="email.sendTo" required>
+    <label class="control-label" for="inputSubject">Subject</label>
+      <input type="text" id="inputSubject" placeholder="Subject" ng-model="email.subject" required>
     <label for="Message"></label>
 <textarea class="textarea" placeholder="Message" ng-model="email.message" ></textarea>
 
@@ -16,4 +18,8 @@
 </form>
 
 <button ng-click="getEmail()">get email</button>
+
+</div>
+<div ng-repeat="message in allMessages" ng-if="message.event=='stored'" >
+{{message.from}} - {{message.timestamp*1000 | date:'medium'}} -  {{message['body-plain']}} - sub: {{message.subject}} - event: {{message.event}}
 </div>
